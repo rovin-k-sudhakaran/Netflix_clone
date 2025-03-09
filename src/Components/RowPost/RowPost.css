@@ -25,3 +25,13 @@
     margin-right: 10px;
     cursor: pointer;
 }
+
+.poster:hover{
+    transform: scale(1.04);
+    transition: transform 0.2s ease-in-out;
+}
+
+.smallposter:hover{
+    transform: scale(1.06);
+    transition: transform 0.2s ease-in-out;
+}
