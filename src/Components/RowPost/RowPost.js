@@ -27,7 +27,6 @@ function RowPost(props) {
   };
 
   const handleMovie = (id) => {
-    console.log(id)
     axios.get(`/movie/${id}/videos?api_key=${API_KEY}&language=en-US`).then(response => {
       if(response.data.results.length!==0){
         setUrlId(response.data.results[0])
@@ -42,7 +41,7 @@ function RowPost(props) {
       <h2>{props.title}</h2>
       <div className="posters">
         {movies.map((obj) => 
-        <img onClick={() => handleMovie(obj.id) } className={props.isSmall ? 'smallposter' : 'poster'} alt='Poster' src={`${imageUrl+obj.backdrop_path}`} />
+        <img onClick={() => handleMovie(obj.id) } key={obj.id} className={props.isSmall ? 'smallposter' : 'poster'} alt='Poster' src={`${imageUrl+obj.backdrop_path}`} />
         )}
            
       </div>
